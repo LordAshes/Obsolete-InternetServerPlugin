@@ -15,7 +15,7 @@ The InternetServer plugin can be started at any time. It does not required all c
 there is an option for client to read historical data if they wish. This will typically depend on the plugin
 implementation that this InternetServer plugin is used in.
 
-##.Connect(Action<string[]> messageReceivedCallback, string session, string user, string url, bool ignoreFirst, bool ignoreOwn)
+## Connect(Action<string[]> messageReceivedCallback, string session, string user, string url, bool ignoreFirst, bool ignoreOwn)
 
 The messageReceivedCllback is a method taking in a string[] parameter which is called each time messages are received from the Internet Server.
 Since the communication is polling,  multiple messages may have been posted since the last communication check and thus the parameter is an
@@ -41,17 +41,17 @@ true then any messages posted by the client will not appear in the received mess
 all messages, including those posted by the client, will be received in the callback.
 
 
-##.Send(message)
+## Send(message)
 
 The message parameter is a string representing the message to be posted to the Internet Server.
 The connect method must have been used in order to use this method.
 
-##.Clean(e)
+## Clean(e)
 
 The message triggers the Internet Server to perform database cleaning maintenance.
 Typically this method does not need to be called because it is automatically called on connection.
 
-##.Disconnect(e)
+## Disconnect(e)
 
 Stops the client from checking for Internet Server messages.
 
